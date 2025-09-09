@@ -34,6 +34,7 @@ jobs:
           Add-Type -AssemblyName System.Security
           $charSet = @(
               [char[]](65..90) + # A-Z
+              [char[]](97..122) + # a-z
               [char[]](48..57)   # 0-9
           )
           $password = -join (1..8 | ForEach-Object { $charSet | Get-Random })
